@@ -1,0 +1,6 @@
+step4/*.js
+step5/*.json
+*.bundle.js
+NOTES.*
+*.zip
+*.log
