@@ -8,5 +8,5 @@ import {
 console.log(
   `${red(bold(Deno.args[0] || "Anonymous"))}, welcome to ${cyan(
     italic("Deno")
-  )} 🦕`
+  )} 🦕🦕`
 );
