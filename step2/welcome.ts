@@ -1,3 +1,3 @@
-import { red, bold, italic, cyan } from "https://deno.land/std/fmt/colors.ts";
+import { bold, cyan, italic, red } from "https://deno.land/std/fmt/colors.ts";
 
-console.log(`${red(bold('Moritz'))}, welcome to ${cyan(italic('Deno'))} 🦕`);
+console.log(`${red(bold("Momo"))}, welcome to ${cyan(italic("Deno"))} 🦕`);
