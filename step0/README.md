@@ -29,10 +29,11 @@ about the whats and whys: https://www.youtube.com/watch?v=M3BM9TB-8yA
 
 - Secure by default using the sandbox approach
 - Supports TypeScript out of the box
-- Built on modern Web Standards
+- Built on modern Web Standards\
+  = Finally fulling the promise of One Web
 - Distributed module resolution
 - Ships a single executable
-- Opinionated built in utilities (`deno fmt`)
+- Opinionated and useful built in utilities (`deno fmt`)
 - Scripts can be bundled into a single javascript file
 - Development speed due to Rust code base
 - Node.js compat package
