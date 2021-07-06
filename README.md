@@ -15,7 +15,7 @@ https://deno.land/
 ```bash
 cd step1
 
-deno https://raw.githubusercontent.com/mrgrain/deno-talk/master/step1/welcome.ts
+deno run https://raw.githubusercontent.com/mrgrain/deno-talk/master/step1/welcome.ts
 
 code welcome.ts
 ```
@@ -23,13 +23,12 @@ code welcome.ts
 ## Step 2 - Basics
 
 ```ts
-import { red, bold, italic, cyan } from "https://deno.land/std/fmt/colors.ts";
+import { bold, cyan, italic, red } from "https://deno.land/std/fmt/colors.ts";
 ```
 
 ```bash
 cd step2
 
-deno welcome.ts
 deno run welcome.ts
 
 deno
@@ -43,9 +42,10 @@ deno eval "console.log('hello world')"
 ```bash
 cd step3
 
-code --install-extension axetroy.vscode-deno
-# Then restart and run VS Code command "deno enable"
+code --install-extension denoland.vscode-deno
 
+deno info
+deno lint welcome.ts
 deno fmt welcome.ts
 deno run some_test.ts
 ```
@@ -57,12 +57,11 @@ cd step4
 
 # bash
 deno completions bash > /usr/local/etc/bash_completion.d/deno.bash
-echo "source /usr/local/etc/bash_completion.d/deno.bash" >> ~/.bashrc
+source /usr/local/etc/bash_completion.d/deno.bash
 
 # zsh
-mkdir -p ~/.zsh/functions
-deno completions zsh > ~/.zsh/functions/_deno
-echo "\nfpath=(~/.zsh/functions \$fpath)" >> ~/.zshrc
+mkdir ~/.oh-my-zsh/custom/plugins/deno
+deno completions zsh > ~/.oh-my-zsh/custom/plugins/deno/_deno
 ```
 
 ## Step 4 - Distribution
@@ -70,14 +69,18 @@ echo "\nfpath=(~/.zsh/functions \$fpath)" >> ~/.zshrc
 ### Fetch, Bundle & Install
 
 ```bash
-deno fetch welcome.ts
+deno cache welcome.ts
 deno run welcome.ts "Name"
-deno fetch -r welcome.ts
+deno cache -r welcome.ts
+
+# Clean cache ~> this will change
+deno info
+rm -rf /path/to/DENO_DIR 
 
 deno bundle welcome.ts welcome.js
 deno run -r welcome.js "Name"
 
-deno install welcome welcome.ts
+deno install welcome.ts
 welcome "Name"
 ```
 
@@ -91,17 +94,32 @@ git push origin 1.2.3
 
 ## Step 5 - Permissions
 
-See: https://deno.land/rustdoc/deno/permissions/struct.DenoPermissions.html
+See: https://deno.land/manual@v1.11.3/getting_started/permissions#permissions
 
 ```bash
 cd step5
 ```
 
 ```ts
-import { readJsonSync } from "https://deno.land/std/fs/mod.ts";
+welcome(Deno.env.get("USER"));
+```
 
-welcome(Deno.env().USER);
+```bash
+deno run --allow-env welcome.ts
+deno run --allow-env=USER welcome.ts
+```
 
-const greetings = readJsonSync("./greetings.json") as string[];
+```ts
+const greetings = JSON.parse(
+  await Deno.readTextFile("./greetings.json"),
+) as string[];
 greetings.forEach(welcome);
+```
+
+```bash
+deno run --allow-env=USER --allow-read welcome.ts
+deno run --allow-env=USER --allow-read=greetings.json welcome.ts
+
+deno install --allow-env=USER --allow-read=greetings.json welcome.ts
+deno run --prompt welcome.ts
 ```
