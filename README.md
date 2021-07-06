@@ -64,6 +64,14 @@ mkdir ~/.oh-my-zsh/custom/plugins/deno
 deno completions zsh > ~/.oh-my-zsh/custom/plugins/deno/_deno
 ```
 
+### Integrity checking
+
+```bash
+deno cache --lock=lock.json --lock-write welcome.ts
+deno cache --lock=lock.json --reload welcome.ts
+deno run --lock=lock.json --cached-only mod.ts
+```
+
 ## Step 4 - Distribution
 
 ### Fetch, Bundle & Install

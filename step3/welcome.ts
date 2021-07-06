@@ -3,7 +3,7 @@ import { red,
   
   cyan } from 
   
-        "https://deno.land/std/fmt/colors.ts";
+        "https://deno.land/std@0.100.0/fmt/colors.ts";
 
 let name: any = 'Momo';
 
