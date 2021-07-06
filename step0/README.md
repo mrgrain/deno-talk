@@ -4,7 +4,7 @@
 
 ## What is Deno
 
-A secure runtime for JavaScript and TypeScript \
+A secure runtime for JavaScript and TypeScript\
 https://deno.land/
 
 It's built on V8, Rust, and Tokio.
@@ -15,7 +15,8 @@ Created by Ryan Dahl - the guy who made Node.js - in May 2018.
 
 ![Ryan Dahl speaking](ryan.jpg)
 
-The goal is to resolve all of node's design mistakes. See Ryan's great talk about the whats and whys: https://www.youtube.com/watch?v=M3BM9TB-8yA
+The goal is to resolve all of node's design mistakes. See Ryan's great talk
+about the whats and whys: https://www.youtube.com/watch?v=M3BM9TB-8yA
 
 - No initial support for Promises
 - Zero Security
