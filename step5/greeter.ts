@@ -1,10 +1,10 @@
-import { red, bold, italic, cyan } from "https://deno.land/std/fmt/colors.ts";
+import { bold, cyan, italic, red } from "https://deno.land/std/fmt/colors.ts";
 
 export function greet(
-  name: string = "Anonymous",
-  colors: boolean = true
+  name = "Anonymous",
+  colors = true,
 ): string {
-  const noop = (it: any) => it;
+  const noop = (it: unknown) => it;
   const redBold = colors ? (text: string) => red(bold(text)) : noop;
   const cyanItalic = colors ? (text: string) => cyan(italic(text)) : noop;
 
