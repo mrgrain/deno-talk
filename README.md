@@ -123,3 +123,32 @@ deno run --allow-env=USER --allow-read=greetings.json welcome.ts
 deno install --allow-env=USER --allow-read=greetings.json welcome.ts
 deno run --prompt welcome.ts
 ```
+
+## Step 6 - Standards
+
+[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) &
+Top-level async await
+
+```bash
+deno run --allow-net fetch.ts
+```
+
+[WebAssembly](https://webassembly.org/)
+
+```bash
+deno run wasm.ts
+```
+
+[Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+
+```bash
+deno run --location=http://localhost memory.ts  
+deno run --location=http://localhost memory.ts Momo
+deno run --location=http://localhost memory.ts
+```
+
+[Import Maps](https://github.com/WICG/import-maps)
+
+```bash
+deno run --import-map=import_map.json import.ts
+```
