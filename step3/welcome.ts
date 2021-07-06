@@ -5,7 +5,9 @@ import { red,
   
         "https://deno.land/std/fmt/colors.ts";
 
+let name: any = 'Momo';
+
 console.log(
   
   
-  `${red(bold("Moritz"))}, welcome to ${cyan(italic("Deno"))} 🦕`);
+  `${red(bold(name))}, welcome to ${cyan(italic("Deno"))} 🦕`);
